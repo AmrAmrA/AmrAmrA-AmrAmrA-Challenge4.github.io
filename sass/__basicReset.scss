@@ -1,0 +1,35 @@
+/* colors */
+/* primary */
+$red                     : hsl(7, 99%, 70%); 
+$yellow                  : hsl(51, 100%, 49%); 
+$cyanGraphicDesingText   : hsl(167, 40%, 24%); 
+$darkBluePhotoText       : hsl(198, 62%, 26%); 
+$darkCyanFooter          : hsl(168, 34%, 41%); 
+
+/* Neutral */
+$white                  : hsl(0, 0%, 100%); 
+$grayishBlue            : hsl(210, 4%, 67%); 
+$darkGrayishBlue        : hsl(232, 10%, 55%);
+$veryDarkGrayishBlue    : hsl(213, 9%, 39%);
+$veryDarkDesaturedBlue  : hsl(212, 27%, 19%); 
+
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Fraunces&display=swap');
+
+/* Basic CSS Reset */
+body {
+    Font-size: 18px; 
+}
+
+*, ::after, ::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    color: $white;
+    text-decoration: none;
+}
+li {
+    list-style-type: none;
+}
