@@ -21,7 +21,6 @@ body {
     font-size: 18px; 
     height: 100%;
 }
-
 *, ::after, ::before {
     margin:     0;
     padding:    0;
@@ -33,20 +32,14 @@ a {
     font-family: 'Barlow';
     font-weight: 400;
     text-align: center;
-    font-size: 20px;
+    font-size: 22px;
 }
 li {
     list-style-type: none;
-}
-
-button {
     text-align: center;
-    width: 100px;
-    padding: 10px 10px;
-    border-radius: 99990px;
+    width: 130px;
+    padding: 15px 20px;
     cursor: pointer;
-    outline: none;
-    border: none;
-    margin-left: 15px;
-    color: black;
+    margin-left: 10px;
+    color: rgb(255, 255, 255);
 }

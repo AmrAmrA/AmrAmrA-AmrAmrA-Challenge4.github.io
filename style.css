@@ -21,27 +21,22 @@ a {
   font-family: "Barlow";
   font-weight: 400;
   text-align: center;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 li {
   list-style-type: none;
-}
-
-button {
   text-align: center;
-  width: 100px;
-  padding: 10px 10px;
-  border-radius: 99990px;
+  width: 130px;
+  padding: 15px 20px;
   cursor: pointer;
-  outline: none;
-  border: none;
-  margin-left: 15px;
-  color: black;
+  margin-left: 10px;
+  color: white;
 }
 
 header {
   position: relative;
+  grid-area: head;
 }
 
 .header_background {
@@ -80,14 +75,101 @@ header {
   position: relative;
   top: 20px;
   display: flex;
-  margin-left: calc(97vw - 100%);
+  margin-left: calc(98vw - 100%);
   font-size: 20px;
 }
 
 .header_logo {
   position: absolute;
-  top: 20px;
+  top: 35px;
+  width: 175px;
   margin-left: 20px;
+}
+
+.contact_item {
+  background-color: white;
+  width: 130px;
+  border-radius: 8rem;
+  text-transform: uppercase;
+}
+
+.contact_item:hover {
+  font-family: "Fraunces", serif;
+  color: white;
+  text-transform: uppercase;
+  background-color: #818498;
+  border: none;
+  border-radius: 8rem;
+  width: 130px;
+  margin-left: 10px;
+}
+
+.link_contact {
+  color: #23303e;
+}
+
+.grid_container {
+  display: grid;
+  grid-template-areas: "brand egg" "ice audience" "design photo";
+}
+
+.brand_description {
+  grid-area: brand;
+}
+
+.first_row {
+  background-color: #121212;
+}
+
+.first_row {
+  display: flex;
+  flex-direction: column;
+  height: 438px;
+  background-color: white;
+  gap: 40px;
+  justify-content: center;
+  margin: 10% 7% 0% 10%;
+}
+
+.brand_paragraphe {
+  margin-right: 5%;
+  line-height: 32px;
+  font-family: "Barlow";
+  font-weight: 400;
+  font-size: 22px;
+  color: #5a636c;
+}
+
+.brand_paragraphe, .brand_learn {
+  margin-top: 10%;
+}
+
+.brand_title {
+  font-family: "Fraunces", sans-serif;
+  font-weight: 900;
+  font-size: 36px;
+  width: 300px;
+  color: #23303e;
+}
+
+.brand_photo {
+  grid-area: egg;
+}
+
+.audience_photo {
+  grid-area: ice;
+}
+
+.audience_description {
+  grid-area: audience;
+}
+
+.design_row {
+  grid-area: design;
+}
+
+.photo_row {
+  grid-area: photo;
 }
 
 /*# sourceMappingURL=style.css.map */
