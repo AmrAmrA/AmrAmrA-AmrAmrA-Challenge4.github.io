@@ -1,1 +1,53 @@
 @import '__basicReset'; 
+
+// .grid_container {
+//     display: grid;
+//     grid-template-areas: 
+//     "head head"
+//     "brand egg"
+//     "ice audience"
+//     "design photo";
+// }
+header {
+    position: relative;
+}
+.header_background {
+    top: 0;
+}
+.header_title {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    letter-spacing: 10px;
+    font-family: 'Fraunces', sans-serif;
+    text-align: center;
+    font-weight: bolder;
+    font-weight: 900;
+}
+.header_arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+.orange_header {
+    width: 100%;
+}
+.logo_and_liste {
+    position: absolute;
+    top: 0;
+}
+.header_list {
+    position: relative;
+    top: 20px;
+    display: flex;
+    margin-left: calc(97vw - 100%);
+    font-size: 20px;
+}
+
+.header_logo {
+    position: absolute;
+    top: 20px;
+    margin-left: 20px;
+}
