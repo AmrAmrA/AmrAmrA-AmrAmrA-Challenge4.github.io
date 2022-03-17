@@ -34,6 +34,10 @@ li {
   color: white;
 }
 
+main {
+  overflow: hidden;
+}
+
 header {
   position: relative;
   grid-area: head;
@@ -111,17 +115,20 @@ header {
 .grid_container {
   display: grid;
   grid-template-areas: "brand egg" "ice audience" "design photo";
+  position: relative;
+  top: -5px;
+  width: 100;
+}
+
+.grid_container img {
+  aspect-ratio: 1/1;
 }
 
 .brand_description {
   grid-area: brand;
 }
 
-.first_row {
-  background-color: #121212;
-}
-
-.first_row {
+.first_row, .second_row {
   display: flex;
   flex-direction: column;
   height: 438px;
@@ -131,7 +138,15 @@ header {
   margin: 10% 7% 0% 10%;
 }
 
-.brand_paragraphe {
+.row_title {
+  font-family: "Fraunces", sans-serif;
+  font-weight: 900;
+  font-size: 36px;
+  width: 300px;
+  color: #23303e;
+}
+
+.row_paragraphe {
   margin-right: 5%;
   line-height: 32px;
   font-family: "Barlow";
@@ -140,16 +155,44 @@ header {
   color: #5a636c;
 }
 
-.brand_paragraphe, .brand_learn {
+.row_paragraphe, .row_learn {
   margin-top: 10%;
 }
 
-.brand_title {
+.row_learn {
+  color: #121212;
+  letter-spacing: 3px;
   font-family: "Fraunces", sans-serif;
   font-weight: 900;
-  font-size: 36px;
-  width: 300px;
-  color: #23303e;
+  text-transform: uppercase;
+  position: relative;
+  cursor: pointer;
+}
+
+.brand_learn::after {
+  background-color: yellow;
+}
+
+.audience_learn::after {
+  background-color: #fe7867;
+}
+
+.row_learn::after {
+  content: "";
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  top: 20px;
+  width: 29%;
+  height: 8px;
+  transform: translateX(0%) scale(0);
+  transition: width 0.1s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+}
+
+.row_learn:hover::after {
+  width: 30%;
+  transform: translateX(-5%) scale(1);
 }
 
 .brand_photo {
@@ -164,12 +207,86 @@ header {
   grid-area: audience;
 }
 
+.design_row, .photo_row {
+  position: relative;
+  top: -5px;
+}
+
 .design_row {
   grid-area: design;
 }
 
 .photo_row {
   grid-area: photo;
+}
+
+.third_row_description {
+  position: relative;
+  top: -260px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: center;
+}
+
+.design_title, .design_paragraphe {
+  color: #25564b;
+}
+
+.photo_paragraphe, .photo_title {
+  color: #19536b;
+}
+
+.third_row_paragraphe {
+  width: 50%;
+  margin: 0 auto;
+  line-height: 25px;
+  font-family: "Barlow";
+  font-weight: 700;
+}
+
+/* Testimonials section  */
+.testimonials {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.testimonial_title {
+  position: relative;
+  margin: 5px auto 100px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  transform: translate(-3%, -65%);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-family: "Fraunces";
+  font-weight: 700;
+  color: #5a636c;
+}
+
+.customers_testimonials {
+  position: relative;
+  top: -25px;
+  width: 100%;
+}
+
+.customers_testimonials img {
+  border-radius: 50%;
+  transform: translate(180%, -65%);
+  width: 70px;
+}
+
+.testimonial_paragraphe, .testimonial_job, .testimonial_name {
+  text-align: center;
+}
+
+.testimonial_paragraphe {
+  margin-bottom: 20px;
+  width: 85%;
 }
 
 /*# sourceMappingURL=style.css.map */
