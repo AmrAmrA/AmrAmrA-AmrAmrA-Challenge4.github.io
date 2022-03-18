@@ -4,7 +4,7 @@ $red                        : hsl(7, 99%, 70%);
 $yellow                     : hsl(51, 100%, 49%); 
 $darkCyanFooter             : hsl(168, 34%, 41%); 
 $darkBluePhotoText          : hsl(198, 62%, 26%); 
-$cyanGraphicDesingText      : hsl(167, 40%, 24%); 
+$cyanGraphicDesingText      : #25564b; 
 
 /* Neutral */
 $white                      : hsl(0, 0%, 100%); 
@@ -20,6 +20,8 @@ $veryDarkDesaturedBlue      : hsl(212, 27%, 19%);
 body {
     font-size: 18px; 
     height: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 *, ::after, ::before {
