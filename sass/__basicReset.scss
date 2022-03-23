@@ -17,11 +17,15 @@ $veryDarkDesaturedBlue      : hsl(212, 27%, 19%);
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Fraunces:wght@700;900&display=swap');
 
 /* Basic CSS Reset */
+html {
+    overflow-x: hidden;
+}
 body {
     font-size: 18px; 
     height: 100%;
-    overflow-x: hidden;
     scroll-behavior: smooth;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 *, ::after, ::before {
