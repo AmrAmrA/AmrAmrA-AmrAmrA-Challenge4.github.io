@@ -347,8 +347,11 @@ header {
 .photo_gallery {
     display: flex;
 }
-.photo_gallery img {
+.photo_gallery_desktop {
     width: 25%;
+}
+.photo_gallery_mobile {
+    display: none;
 }
 
 /* Footer and social medias icons */
@@ -383,7 +386,7 @@ footer {
 }
 
 .social_medias_icons i {
-    margin: 0 10px;
+    margin: 0 16px;
     color: $cyanGraphicDesingText;
     cursor: pointer;
 }
