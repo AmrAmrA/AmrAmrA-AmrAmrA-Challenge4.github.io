@@ -61,6 +61,7 @@ header {
   text-align: center;
   font-weight: bolder;
   font-weight: 900;
+  color: white;
 }
 
 .header_arrow {
@@ -409,7 +410,7 @@ header {
 
 /* Footer and social medias icons */
 footer {
-  background-color: #25564b;
+  color: #25564b;
   width: 100%;
 }
 
