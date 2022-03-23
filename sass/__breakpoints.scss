@@ -74,16 +74,10 @@
     }
 }
 @media screen and (max-width : 700px) {
-    .egg_photo, 
-    .audience_photo_desktop, 
-    .graphic_photo_desktop, 
-    .photography_orange {
+   .photo_desktop {
         display: none;
     }
-    .egg_photo_mobile,
-    .audience_photo_mobile,
-    .graphic_photo_mobile,
-    .photography_orange_mobile {
+    .photo_mobile {
         display: block;
     }
     .grid_container {

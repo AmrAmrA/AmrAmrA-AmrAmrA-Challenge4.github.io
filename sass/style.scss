@@ -1,69 +1,67 @@
 @import '__basicReset'; 
+@import '__mixins'; 
 
+/* Desktop header */
+/* Global design for the header */
 header {
     position: relative;
     grid-area: head;
     width: 100%;
 }
-
 .header_background {
     top: 0;
 }
+/* Design for the text 'We Are Creatives' */
 .header_title {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%); 
-    letter-spacing: 10px;
-    font-family: 'Fraunces', sans-serif;
-    text-align: center;
-    font-weight: bolder;
-    font-weight: 900;
-    color: $white;
+    @include headerDesign; 
 }
 .header_arrow {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); 
+    @include arrowDesign; 
 }
+/* Place for the orange in desktop version */
 .orange_header {
     width: 100%;
 }
 
 /*  Mobile Header */
-
 .mobile_orange_header {
     display: none;
     width: 100%;
 }
+/* The header navigation menu and the logo */
 .logo_and_liste {
     position: absolute;
     top: 0;
     width: 100%;
-
 }
-
-/* Reponsive Menu  */
-
+/* Placement in column for the navigation menu in Desktop */ 
+.header_list {
+    @include menuMobile; 
+}
+.header_logo {
+    @include logoMobile; 
+}
+.header_list .contact_item {
+    @include contactItemDesktop; 
+}
+.link_contact {
+    color: $veryDarkDesaturedBlue ;
+}
+/* Reponsive Menu  
+   Menu version mobile
+*/
 .contLigne {
-    width: 30px;
-    height: 22px;
-    cursor: pointer;
-    position: relative;
-    margin-left: 90%;
-    top: 40px;
-    display: none;
+   @include menuHamburger; 
+   /* Lines of the hamburger menu */
+   .lignes {
+       width: 100%;
+       height: 4px;
+       border-radius: 5px;
+       background: rgb(255, 255, 255);
+       position: absolute;
+       transition: all .5s ease-in-out;
+   }
 }
-.lignes {
-    width: 100%;
-    height: 4px;
-    border-radius: 5px;
-    background: rgb(255, 255, 255);
-    position: absolute;
-    transition: all .5s ease-in-out;
-}
-
 .lignes:nth-child(1){
     top: 0px;
 }
@@ -72,28 +70,23 @@ header {
 }
 .lignes:nth-child(3){
     top: 14px;
-} 
-
-
+}
+/* Placement in column for the navigation menu in mobile */ 
 .mobile_list {
-    background-color: hsl(0, 0%, 99%);
-    width: 275px;
-    position: relative;
-    display: none;
+    @include mobileList; 
+    /* The before element is the specefic form in the menu mobile version  */
+    ::before {
+        content: '';
+        position: absolute;
+        top: -1.25rem;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-width: 0.625rem;
+        border-style: solid;
+        border-color: transparent #fff #fff transparent;
+    }
 }
-
-.mobile_list::before {
-    content: '';
-    position: absolute;
-    top: -1.25rem;
-    right: 0;
-    width: 0;
-    height: 0;
-    border-width: 0.625rem;
-    border-style: solid;
-    border-color: transparent #fff #fff transparent;
-}
-
 .mobile_list li  {
     margin: 0 auto 10px;
 }
@@ -117,112 +110,74 @@ header {
 .mobile_list .contact_item a {
     color: rgb(0, 0, 0);
 }
-
-.header_list {
-    position: relative;
-    top: 20px;
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 4%;
-    font-size: 20px;
-}
-
-.header_logo {
-    position: absolute;
-    top: 35px;
-    width: 175px;
-    margin-left: 20px;
-}
-.header_list .contact_item {
-    background-color:  $white; 
-    width: 130px;
-    border-radius: 8rem;
-    text-transform: uppercase;
-}
-.header_list  .contact_item:hover {
-    font-family: 'Fraunces', serif;
-    color: hsl(0, 0%, 100%);
-    text-transform: uppercase;
-    background-color:  $darkGrayishBlue; 
-    border: none;
-    border-radius: 8rem;
-    width: 130px;
-    margin-left: 10px;
-}
-
-.link_contact {
-    color: $veryDarkDesaturedBlue ;
+/* Class to add in Javascript to activate the hamburger menu */
+.active {
+    @include flexCenter; 
+    align-items: center; 
+    flex-direction: column; 
+    margin: 15% auto 0;
 }
 
 
+/* Container  */
+/* Placement for the grid items */
 .grid_container {
-    display: grid;
-    grid-template-rows: repeat(3, 30.5%);
-    grid-template-columns: repeat(2, 53.5%);
-    position: relative;
-    top: -5px;
-    width: 100%;
+    @include gridContainer; 
+    /* Design for the four image inside the CSS Grid */
+    img {
+        width: 100%;
+        height: 100%;
+    }
 }
-
-.grid_container img {
-    width: 100%;
-    height: 100%;
-}
-
-
-.brand_description {
-    grid-area: brand;
-}
+/* Design the texts inside the first in the second row of the CSS Grid */
 .first_row, .second_row {
-    display: flex;
+    @include flexCenter; 
     flex-direction: column;
     height: 438px;
     background-color: white;
-    justify-content: center;
     margin: 10% 7% 0% 8%;
+
+    .row_title {
+        font-family: 'Fraunces', sans-serif;
+        font-weight: 900;
+        font-size: 36px;
+        width: 300px;
+        color: $veryDarkDesaturedBlue;
+    }
+
+    .row_paragraphe {
+        margin-right: 5%;
+        line-height: 32px;
+        font-family: 'Barlow';
+        font-weight: 400;
+        font-size: 22px;
+        color: $veryDarkGrayishBlue;
+    }
+
+    .row_learn {
+        color: #121212;
+        letter-spacing: 3px;
+        font-family: 'Fraunces', sans-serif;
+        font-weight: 900;
+        text-transform: uppercase;
+        position: relative;
+        cursor: pointer;
+    }
 }
-.row_title {
-    font-family: 'Fraunces', sans-serif;
-    font-weight: 900;
-    font-size: 36px;
-    width: 300px;
-    color: $veryDarkDesaturedBlue;
-}
+
 .row_title_mobile {
     display: none;
 }
-.row_paragraphe {
-    margin-right: 5%;
-    line-height: 32px;
-    font-family: 'Barlow';
-    font-weight: 400;
-    font-size: 22px;
-    color: $veryDarkGrayishBlue;
-}
-
 .row_paragraphe, .row_learn {
     margin-top: 10%;
     margin-right: 11%;
 }
-
-.row_learn {
-    color: #121212;
-    letter-spacing: 3px;
-    font-family: 'Fraunces', sans-serif;
-    font-weight: 900;
-    text-transform: uppercase;
-    position: relative;
-    cursor: pointer;
-}
-
 .brand_learn::after {
     background-color: yellow;
 }
-
 .audience_learn::after {
     background-color: $red;
 }
-
 .row_learn::after {
     content: "";
     position: absolute;
@@ -239,22 +194,18 @@ header {
     width: 170px;
     transform: translateX(-5%) scale(1);
 }
-.egg_photo_mobile, 
-.audience_photo_mobile, 
-.graphic_photo_mobile, 
-.photography_orange_mobile{
+/* Preparing photos for the mobile version */
+.photo_mobile{
     display: none;
 }
-
-
+/* Design for the Photography and Design rows */
 .third_row_description {
     position: relative;
     top: -40%;
+    @include flexCenter; 
     text-align: center;
-    display: flex;
     flex-direction: column;
     gap: 40px;
-    justify-content: center;
 }
 .design_title, .design_paragraphe  {
     color: $cyanGraphicDesingText;
@@ -271,61 +222,30 @@ header {
 }
 
 /* Testimonials section  */
-.testimonials {
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    width: 100%;
-}
-
-.testimonial_title {
-    position: relative;
-    margin: 05px auto 100px;
-    text-align: center;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    font-family: 'Fraunces';
-    font-weight: 700;
-    color: $veryDarkGrayishBlue;
-}
-
 .customers_testimonials {
-    position: relative;
-    top: -25px;
-    width: 100%;
-    margin-bottom: 200px;
-    background-color: $white
+    @include testimonialsSection; 
+    /* Placement in center for the testimonials, images and texts */
+    .testimonials {
+        @include flexCenter; 
+        margin: 0 auto;
+        width: 100%;
+    }
 }
-
-
-
+.testimonial_title {
+    @include testimonialsTitle
+}
 .personal_testimonial {
     width: 400px;
 }
-
 .customers_testimonials img {
-    border-radius: 50%;
-    position: relative;
-    display: block;
-    margin: 0 auto 25px auto;
-    width: 70px;
+    @include customersImage; 
 }
-
-
 .testimonial_paragraphe {
-    text-align: center;
-    width: 88%;
-    margin-left: 2%;
-    margin-bottom: 35px;
-    line-height: 28px;
-    font-family: 'Barlow', sans-serif;
-    font-weight: 400;
-    min-height: 7rem;
+   @include customersText; 
 }
 .testimonial_info {
-   display: flex;
+   @include flexCenter; 
    flex-direction: column;
-   justify-content: center;
    align-items: center;
    gap: 10px;
 }
@@ -352,12 +272,10 @@ header {
 }
 
 /* Footer and social medias icons */
-
 footer {
     background-color: $darkCyanFooter; 
     width: 100%;
 }
-
 .logo_footer {
    display: block;
    margin: 0px auto;
@@ -365,8 +283,7 @@ footer {
 }
 .list_footer, .social_medias_icons {
     margin-top: 20px;
-    display: flex;
-    justify-content: center;
+    @include flexCenter; 
     align-items: center;
 }
 .list_footer li a {
@@ -377,11 +294,9 @@ footer {
      font-size: 17px;
      cursor: pointer;
 }
-
 .list_footer li a:hover {
     color: #f8e1e1;
 }
-
 .social_medias_icons i {
     margin: 0 16px;
     color: $cyanGraphicDesingText;
@@ -393,26 +308,10 @@ footer {
 
 /* Footer attribution */
 footer .attribution {
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    color:$white;
-    text-decoration: none;
-    font-family: 'Barlow';
-    font-weight: 400;
-    text-align: center;
-    font-size: 18px;
-    margin: 0 20%;
+    @include flexCenter;
+    @include linksAttribution; 
 }
 footer .attribution a {
     font-size: 18px;
-}
-
-.active {
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    flex-direction: column; 
-    margin: 15% auto 0;
 }
 @import '__breakpoints'; 

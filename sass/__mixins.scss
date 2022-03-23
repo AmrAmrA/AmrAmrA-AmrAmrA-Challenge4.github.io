@@ -1,0 +1,132 @@
+@import '__basicReset'; 
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center; 
+}
+@mixin headerDesign {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    letter-spacing: 10px;
+    font-family: 'Fraunces', sans-serif;
+    text-align: center;
+    font-weight: bolder;
+    font-weight: 900;
+    color: $white;
+}
+@mixin arrowDesign {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+
+@mixin menuMobile {
+    position: relative;
+    top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 4%;
+    font-size: 20px;
+}
+
+@mixin logoMobile {
+    position: absolute;
+    top: 35px;
+    width: 175px;
+    margin-left: 20px;
+}
+
+@mixin contactItemDesktop {
+    background-color:  $white; 
+    width: 140px;
+    border-radius: 8rem;
+    text-transform: uppercase;
+    &:hover {
+        font-family: 'Fraunces', serif;
+        color: hsl(0, 0%, 100%);
+        text-transform: uppercase;
+        background-color:  $darkGrayishBlue; 
+        border: none;
+        border-radius: 8rem;
+        width: 140px;
+        margin-left: 10px;
+    }
+}
+
+@mixin menuHamburger {
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    position: relative;
+    margin-left: 90%;
+    top: 40px;
+    display: none;
+}
+
+@mixin  mobileList {
+    background-color: hsl(0, 0%, 99%);
+    width: 275px;
+    position: relative;
+    display: none;
+}
+
+@mixin gridContainer {
+    display: grid;
+    grid-template-rows: repeat(3, 30.5%);
+    grid-template-columns: repeat(2, 53.5%);
+    position: relative;
+    top: -5px;
+    width: 100%;
+}
+
+@mixin testimonialsSection {
+    position: relative;
+    top: -25px;
+    width: 100%;
+    margin-bottom: 200px;
+    background-color: $white; 
+}
+
+@mixin testimonialsTitle {
+    position: relative;
+    margin: 05px auto 100px;
+    text-align: center;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-family: 'Fraunces';
+    font-weight: 700;
+    color: $veryDarkGrayishBlue;
+}
+
+@mixin customersImage {
+    border-radius: 50%;
+    position: relative;
+    display: block;
+    margin: 0 auto 25px auto;
+    width: 70px;
+}
+
+@mixin customersText {
+    text-align: center;
+    width: 88%;
+    margin-left: 2%;
+    margin-bottom: 35px;
+    line-height: 28px;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 400;
+    min-height: 7rem;
+}
+
+@mixin linksAttribution {
+    padding: 20px;
+    color:$white;
+    text-decoration: none;
+    font-family: 'Barlow';
+    font-weight: 400;
+    text-align: center;
+    font-size: 18px;
+    margin: 0 20%;
+}
